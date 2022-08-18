@@ -21,7 +21,7 @@ class BasePage:
     def open(self):
         self.browser.get(self.url)
 
-    def is_texts_of_elements_equal(self, tuple_with_locators):
+    def is_text_of_elements_equal(self, tuple_with_locators):
         return len(set([self.browser.find_element(*item).text for item in tuple_with_locators])) == 1
 
     def solve_quiz_and_get_code(self):

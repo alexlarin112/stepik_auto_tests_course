@@ -13,10 +13,11 @@ class ProductPage(BasePage):
     def should_be_product_price(self):
         assert self.is_element_present(*ProductPageLocators.PRODUCT_PRICE), "Product price is not presented"
 
-    def should_same_product_title_after_basket_add_in_message(self):
-        assert self.is_texts_of_elements_equal((ProductPageLocators.PRODUCT_TITLE,
-                                                ProductPageLocators.PRODUCT_TITLE_IN_MESSAGE))
+    def should_be_same_product_title_after_basket_add(self):
+        assert self.is_text_of_elements_equal((ProductPageLocators.PRODUCT_TITLE,
+                                                ProductPageLocators.PRODUCT_TITLE_IN_MESSAGE)), "Products titles are different"
 
-    def should_same_product_price_after_basket_add_in_message(self):
-        assert self.is_texts_of_elements_equal((ProductPageLocators.PRODUCT_PRICE,
-                                                ProductPageLocators.PRODUCT_PRICE_IN_MESSAGE))
+    def should_be_same_product_price_after_basket_add(self):
+        assert self.is_text_of_elements_equal((ProductPageLocators.PRODUCT_PRICE,
+                                                ProductPageLocators.PRODUCT_PRICE_IN_MESSAGE)), "Products prices are different"
+
